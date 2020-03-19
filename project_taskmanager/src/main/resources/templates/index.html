@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+</head>
+<style>
+    table, th, td {
+        border: 1px solid black;
+    }
+</style>
+<body>
+
+
+    <p th:if="${tasks.empty}">nothing to show you</p>
+    <div th:if="${!tasks.empty}">
+        <table>
+        <h2>Tasks</h2>
+
+        <tr th:each="task : ${tasks}">
+            <td th:text="${task.id}+'.'+ ${task.name} + ': due '+ ${task.time} +'amount of subtasks: '+${task.getAmountOfSubs()} "></td>
+            <td> <a th:href="'task/change/'+${task.id}">edit</a></td>
+
+
+        </tr>
+        </table>
+    </div>
+</body>
+</html>

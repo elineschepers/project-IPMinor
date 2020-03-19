@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task info</title>
+</head>
+<body>
+
+<h2> task detail</h2>
+<p th:text="'Title: '+${task.name}">  </p>
+<p th:text=" 'Description: '+${task.description}"> </p>
+<p th:text="'Due date:'+ ${task.time}"></p>
+
+
+<h2> subtasks details</h2>
+<div th:each="t : ${subtasks}">
+<p th:text="'Title: '+${t.name}">  </p>
+<p th:text=" 'Description: '+${t.description}"> </p>
+<p th:text="'Due date:'+ ${t.time}"></p>
+</div>
+</body>
+</html>
